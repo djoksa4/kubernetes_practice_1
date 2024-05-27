@@ -1,5 +1,6 @@
-# Start kubernetes cluster locally using minikube
+# Start / stop kubernetes cluster locally using minikube
 minikube start --driver=docker
+minikube stop
 
 # Check status
 kubectl get nodes
