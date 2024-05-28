@@ -8,6 +8,8 @@ kubectl get pod
 kubectl get services
 kubectl get deployment
 kubectl get replicaset
+kubectl get namespaces
+kubectl get ingress -n kubernetes-dashboard # -n flag is for namespace, optional
 
 # Creation
 kubectl create deployment depl-name --image=nginx
@@ -24,7 +26,11 @@ kubectl exec -it pod-name --bin/bash
 kubectl delete deployment-name
 
 # Using config files (same for Deployments, Services, Secrets, ConfigMaps)
-kubectl apply -f config-file.yaml
+kubectl apply -f config-file.yaml --namespace-my-namespace # namespace is optional, can be specified in the file itself as well
 kubectl delete -f config-file.yaml
 
+# Namespaces
+kubectl create namespace my-namespace # can also be created from a config file
 
+# Ingress
+minikube addons enable ingress
