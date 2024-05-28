@@ -4,12 +4,13 @@ minikube stop
 
 # Check status
 kubectl get nodes
-kubectl get pod
+kubectl get pod -o wide # output wide is optional, used for more info such as IP address etc
 kubectl get services
 kubectl get deployment
 kubectl get replicaset
 kubectl get namespaces
 kubectl get ingress -n kubernetes-dashboard # -n flag is for namespace, optional
+kubectl get endpoints
 
 # Creation
 kubectl create deployment depl-name --image=nginx
@@ -32,5 +33,5 @@ kubectl delete -f config-file.yaml
 # Namespaces
 kubectl create namespace my-namespace # can also be created from a config file
 
-# Ingress
+# Ingress setup
 minikube addons enable ingress
